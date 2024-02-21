@@ -4,8 +4,11 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: #000;
   --background-end-rgb: 255, 255, 255;
+  --color-primary-ux: #000;
+  --color-secundary-ux: #000;
+  --color-esg-ux: rgb(66, 152, 116)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +20,15 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-secundary-ux);
+}
+
+main{
+  height: 100%;
 }
 
 @layer utilities {

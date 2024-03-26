@@ -1,15 +1,18 @@
 "use client"
 
 import BannerMain from "@/components/bannerMain";
-import Image from "next/image";
-import Link from "next/link";
+import CarrouselVertical from "@/components/slideVerticalHome";
 
 
 export default function Home() {
+
+
+
   return (
     <>
       <main className="bg-white h-full w-full">
           <BannerMain />
+          <CarrouselVertical/>
       </main>
     </>
   );

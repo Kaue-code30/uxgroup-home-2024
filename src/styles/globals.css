@@ -7,8 +7,18 @@
   --background-start-rgb: #000;
   --background-end-rgb: 255, 255, 255;
   --color-primary-ux: #000;
-  --color-secundary-ux: #000;
-  --color-esg-ux: rgb(66, 152, 116)
+  --color-secundary-ux: #4a4a4a;
+  --color-vendas-primary-ux: #450071;
+  --color-vendas-secondary-ux: #a900d9;
+  --color-gestao-primary-ux: #29265b;
+  --color-gestao-secundary-ux: #009580;
+  --color-ondetah-primary-ux: #009580;
+  --color-trux-primary-ux: #009580;
+  --color-logistics-primary-ux: #fbc709;
+  --color-logistics-secundary-ux: #ff7f13;
+  --color-esg-primary-ux: #7dad58;
+  --color-esg-secundary-ux: #014c34;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,12 +37,99 @@ body {
   background-color: var(--color-secundary-ux);
 }
 
-main{
+main {
+  width: 1996px;
   height: 100%;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  h1{
+    font-size: 36px;
+    padding-bottom: 8px;
+  }
+  h2{
+    font-size: 24px;
+  }
+  p{
+    font-size: 14px;
+    padding-bottom: 16px;
+  }
+  button{
+    font-size: 14px;
+  }
+
+  .initial-state {
+    transform: translateX(
+      100%
+    ); /* Posiciona o conteúdo fora da tela à direita */
+    opacity: 0; /* Oculta o conteúdo inicialmente */
+  }
+
+  .animated-state-one {
+    /* Animação específica para o primeiro título */
+    transform: translateX(0); /* Posiciona o conteúdo na tela */
+    opacity: 1; /* Mostra o conteúdo */
+    animation: animate-one 1s ease-in-out forwards; /* Adiciona animação */
+  }
+
+  .animated-state-two {
+    /* Animação específica para o segundo título */
+    transform: translateX(0); /* Posiciona o conteúdo na tela */
+    opacity: 1; /* Mostra o conteúdo */
+    animation: animate-two 1s ease-in-out forwards; /* Adiciona animação */
+  }
+
+  .animated-state-three {
+    /* Animação específica para o terceiro título */
+    transform: translateX(0); /* Posiciona o conteúdo na tela */
+    opacity: 1; /* Mostra o conteúdo */
+    animation: animate-three 1s ease-in-out forwards; /* Adiciona animação */
+  }
+
+  /* Defina as animações específicas (opcional) */
+  @keyframes animate-one {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes animate-two {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+  }
+  
+  .fade-in.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Adicione uma transição suave se desejar */
+  }
+
+  @keyframes animate-three {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }
